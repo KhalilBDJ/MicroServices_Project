@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Commande" />
         <module name="Paiement" />
+        <module name="Config" />
+        <module name="Zuul" />
+        <module name="Commande" />
         <module name="Client" />
         <module name="Eureka" />
-        <module name="Config" />
         <module name="Produit" />
       </profile>
     </annotationProcessing>
@@ -22,6 +23,7 @@
       <module name="Eureka" target="17" />
       <module name="Paiement" target="17" />
       <module name="Produit" target="17" />
+      <module name="Zuul" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -32,6 +34,7 @@
       <module name="Eureka" options="-parameters" />
       <module name="Paiement" options="-parameters" />
       <module name="Produit" options="-parameters" />
+      <module name="Zuul" options="-parameters" />
     </option>
   </component>
 </project>

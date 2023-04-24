@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/MicroServices_Project.iml" filepath="$PROJECT_DIR$/.idea/MicroServices_Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/Paiement/Paiement.iml" filepath="$PROJECT_DIR$/Paiement/Paiement.iml" />
       <module fileurl="file://$PROJECT_DIR$/Produit/Produit.iml" filepath="$PROJECT_DIR$/Produit/Produit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zuul/Zuul.iml" filepath="$PROJECT_DIR$/Zuul/Zuul.iml" />
     </modules>
   </component>
 </project>

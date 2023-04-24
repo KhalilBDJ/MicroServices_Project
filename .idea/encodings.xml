@@ -8,5 +8,7 @@
     <file url="file://$PROJECT_DIR$/Eureka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Paiement/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Produit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Zuul/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Zuul/src/main/resources" charset="UTF-8" />
   </component>
 </project>
