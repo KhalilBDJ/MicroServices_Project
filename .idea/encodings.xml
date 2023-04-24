@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/Client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Commande/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Eureka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Paiement/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Produit/src/main/java" charset="UTF-8" />
   </component>

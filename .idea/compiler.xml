@@ -10,6 +10,7 @@
         <module name="Commande" />
         <module name="Paiement" />
         <module name="Client" />
+        <module name="Eureka" />
         <module name="Config" />
         <module name="Produit" />
       </profile>
@@ -18,6 +19,7 @@
       <module name="Client" target="17" />
       <module name="Commande" target="17" />
       <module name="Config" target="17" />
+      <module name="Eureka" target="17" />
       <module name="Paiement" target="17" />
       <module name="Produit" target="17" />
     </bytecodeTargetLevel>
@@ -27,6 +29,7 @@
       <module name="Client" options="-parameters" />
       <module name="Commande" options="-parameters" />
       <module name="Config" options="-parameters" />
+      <module name="Eureka" options="-parameters" />
       <module name="Paiement" options="-parameters" />
       <module name="Produit" options="-parameters" />
     </option>
