@@ -16,6 +16,4 @@ public class Client {
     private String nom;
     private String email;
     private String motDePasse;
-
-    // Getters et setters
 }

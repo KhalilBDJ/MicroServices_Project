@@ -19,9 +19,6 @@ public class Commande {
     private String numero;
     private LocalDate date;
 
-    private Long clientId; // Remplace la relation directe avec le Client
-
-    // Getters et setters
-
+    private Long clientId;
 
 }
