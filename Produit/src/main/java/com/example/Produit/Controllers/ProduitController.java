@@ -1,8 +1,7 @@
-package Controllers;
+package com.example.Produit.Controllers;
 
-import Model.Produit;
-import Repositories.ProduitRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.Produit.Model.Produit;
+import com.example.Produit.Repositories.ProduitRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

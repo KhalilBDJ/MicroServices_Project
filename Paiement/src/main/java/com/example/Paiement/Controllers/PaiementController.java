@@ -1,7 +1,7 @@
-package Controllers;
+package com.example.Paiement.Controllers;
 
-import Model.Paiement;
-import Repositories.PaiementRepository;
+import com.example.Paiement.Model.Paiement;
+import com.example.Paiement.Repositories.PaiementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

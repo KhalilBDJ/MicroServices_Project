@@ -1,6 +1,6 @@
-package Repositories;
+package com.example.Paiement.Repositories;
 
-import Model.Paiement;
+import com.example.Paiement.Model.Paiement;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,7 @@
-package Controllers;
+package com.example.Client.Controllers;
 
-import Model.Client;
-import Repositories.ClientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.Client.Model.Client;
+import com.example.Client.Repositories.ClientRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/clients")
 public class ClientController {
-    @Autowired
-    private ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
+
+    public ClientController(ClientRepository clientRepository) {
+        this.clientRepository = clientRepository;
+    }
 
     @GetMapping()
     public ResponseEntity<List<Client>> getAllClients() {

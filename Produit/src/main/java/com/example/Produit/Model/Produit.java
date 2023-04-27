@@ -1,4 +1,4 @@
-package Model;
+package com.example.Produit.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,12 +10,12 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-public class Paiement {
+public class Produit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String numeroTransaction;
-    private Double montant;
+    private String nom;
+    private String reference;
+    private Double prix;
 
-    private Long commandeId;
 }

@@ -1,4 +1,4 @@
-package Model;
+package com.example.Commande.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

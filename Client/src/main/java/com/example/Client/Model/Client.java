@@ -1,4 +1,4 @@
-package Model;
+package com.example.Client.Model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

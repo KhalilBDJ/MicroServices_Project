@@ -1,7 +1,7 @@
-package Controllers;
+package com.example.Commande.Controllers;
 
-import Model.Commande;
-import Repositories.CommandeRepository;
+import com.example.Commande.Model.Commande;
+import com.example.Commande.Repositories.CommandeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
