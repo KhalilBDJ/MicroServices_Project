@@ -12,8 +12,12 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/produits")
 public class ProduitController {
-    @Autowired
-    private ProduitRepository produitRepository;
+
+    private final ProduitRepository produitRepository;
+
+    public ProduitController(ProduitRepository produitRepository) {
+        this.produitRepository = produitRepository;
+    }
 
     @GetMapping
     public List<Produit> getAllProduits() {

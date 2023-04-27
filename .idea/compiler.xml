@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Paiement" />
         <module name="Config" />
+        <module name="Gateway" />
         <module name="Zuul" />
         <module name="Commande" />
         <module name="Client" />
@@ -16,15 +17,6 @@
         <module name="Produit" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Client" target="17" />
-      <module name="Commande" target="17" />
-      <module name="Config" target="17" />
-      <module name="Eureka" target="17" />
-      <module name="Paiement" target="17" />
-      <module name="Produit" target="17" />
-      <module name="Zuul" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -32,6 +24,7 @@
       <module name="Commande" options="-parameters" />
       <module name="Config" options="-parameters" />
       <module name="Eureka" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
       <module name="Paiement" options="-parameters" />
       <module name="Produit" options="-parameters" />
       <module name="Zuul" options="-parameters" />
