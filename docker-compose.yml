@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.1'
 
 services:
   db:
@@ -7,6 +7,26 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: paiement_db,client_db,commande_db,produit_db
     ports:
       - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    command: >
+      postgres -c 'shared_preload_libraries=pg_stat_statements'
+
+  init_db:
+    image: postgres
+    depends_on:
+      - db
+    command: >
+      /bin/bash -c "
+      sleep 10;
+      echo 'CREATE DATABASE paiement_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      echo 'CREATE DATABASE client_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      echo 'CREATE DATABASE commande_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      echo 'CREATE DATABASE produit_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      "
+
+volumes:
+  db_data:
+
