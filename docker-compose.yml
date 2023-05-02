@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: paiement_db,client_db,commande_db,produit_db
+    ports:
+      - "5432:5432"

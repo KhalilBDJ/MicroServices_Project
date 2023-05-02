@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Paiement" />
-        <module name="Config" />
         <module name="Gateway" />
+        <module name="Config" />
         <module name="Zuul" />
         <module name="Commande" />
         <module name="Client" />
