@@ -1,0 +1,100 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    container_name: database
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    command: >
+      postgres -c 'shared_preload_libraries=pg_stat_statements'
+
+  init_db:
+    image: postgres
+    depends_on:
+      - db
+    command: >
+      /bin/bash -c "
+      sleep 10;
+      echo 'CREATE DATABASE paiement_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      echo 'CREATE DATABASE client_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      echo 'CREATE DATABASE commande_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      echo 'CREATE DATABASE produit_db;' | PGPASSWORD=admin psql -h db -U postgres;
+      "
+
+  eureka:
+    image: eureka
+    container_name: eureka
+    ports:
+      - "8761:8761"
+    depends_on:
+      - db
+
+  config:
+    image: config
+    container_name: config
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka
+
+  gateway:
+    image: gateway
+    container_name: gateway
+    restart: on-failure
+    ports:
+      - "8085:8085"
+    depends_on:
+      - paiement
+      - client
+      - commande
+      - produit
+
+  paiement:
+    image: paiement
+    container_name: paiement
+    restart: on-failure
+    ports:
+      - "8081:8081"
+    depends_on:
+      - config
+      - eureka
+
+  client:
+    image: client
+    container_name: client-service
+    restart: on-failure
+    ports:
+      - "8082:8082"
+    depends_on:
+      - config
+      - eureka
+
+  commande:
+    image: commande
+    container_name: commande
+    restart: on-failure
+    ports:
+      - "8083:8083"
+    depends_on:
+      - config
+      - eureka
+
+  produit:
+    image: produit
+    container_name: produit
+    restart: on-failure
+    ports:
+      - "8084:8084"
+    depends_on:
+      - config
+      - eureka
+
+volumes:
+  db_data:
