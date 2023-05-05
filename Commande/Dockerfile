@@ -1,5 +1,14 @@
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+# Utilisez l'image officielle de Java pour la base
+FROM openjdk:17
+
+# Définissez un répertoire de travail
+WORKDIR /app
+
+# Copiez le fichier JAR de votre microservice dans l'image Docker
+COPY Commande-0.0.1-SNAPSHOT.jar /app/commande.jar
+
+# Exposez le port sur lequel votre microservice écoutera
+EXPOSE 8082
+
+# Définissez la commande pour démarrer votre microservice
+ENTRYPOINT ["java", "-jar", "/app/commande.jar"]

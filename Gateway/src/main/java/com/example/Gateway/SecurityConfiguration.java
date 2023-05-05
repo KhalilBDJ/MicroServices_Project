@@ -1,4 +1,4 @@
-package com.example.Gateway;
+/*package com.example.Gateway;*/
 
 /*import org.springframework.context.annotation.Bean;
  import org.springframework.context.annotation.Configuration;
@@ -61,6 +61,7 @@ public class SecurityConfiguration {
     }
 }*/
 
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -124,3 +125,4 @@ public class SecurityConfiguration {
         };
     }
 }
+*/

@@ -5,7 +5,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copiez le fichier JAR de votre microservice dans l'image Docker
-COPY target/Client.jar /app/client.jar
+COPY Client-0.0.1-SNAPSHOT.jar /app/client.jar
 
 # Exposez le port sur lequel votre microservice écoutera
 EXPOSE 8083

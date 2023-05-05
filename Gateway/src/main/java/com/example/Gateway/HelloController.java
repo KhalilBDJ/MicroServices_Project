@@ -1,3 +1,4 @@
+/*
 package com.example.Gateway;
 
 import org.springframework.http.ResponseEntity;
@@ -21,3 +22,4 @@ public class HelloController {
     }
 
 }
+*/

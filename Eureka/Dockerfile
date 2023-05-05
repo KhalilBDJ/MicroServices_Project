@@ -5,7 +5,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copiez le fichier JAR de votre microservice dans l'image Docker
-COPY target/Eureka.jar /app/eureka.jar
+COPY Eureka-0.0.1-SNAPSHOT.jar /app/eureka.jar
 
 # Exposez le port sur lequel votre microservice écoutera
 EXPOSE 8761

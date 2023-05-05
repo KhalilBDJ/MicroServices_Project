@@ -5,7 +5,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copiez le fichier JAR de votre microservice dans l'image Docker
-COPY target/Gateway.jar /app/gateway.jar
+COPY Gateway-0.0.1-SNAPSHOT.jar /app/gateway.jar
 
 # Exposez le port sur lequel votre microservice écoutera
 EXPOSE 8085
