@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique en Ligne</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="https://s3u.tmimgcdn.com/800x0/u2303654/cff9c1181231c8c98c33ea09bbab0750.jpg" alt="Logo de la boutique" class="logo">
+        <h1>Shop</h1>
+    </header>
+
+    <main>
+        <h2>Bienvenue dans notre boutique en ligne !</h2>
+        <div class="product">
+            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/247616b5-1d3b-4777-abbb-d5e08a924b78/chaussure-facile-a-enfiler-et-a-retirer-go-flyease-MWN8NF.png" alt="Chaussure 1">
+            <h3>Chaussure facile à enfiler et à retirer</h3>
+            <p>Prix : 99,99 €</p>
+        </div>
+
+        <div class="product">
+            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/chaussure-air-force-1-07-pour-GjGXSP.png" alt="Chaussure 2">
+            <h3>Chaussure Air Force 1 '07</h3>
+            <p>Prix : 129,99 €</p>
+        </div>
+
+        <div class="product">
+            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b32586dc-421b-4eb3-8ff2-964905fdc954/chaussure-air-max-plus-3-pour-HHC1rJ.png" alt="Chaussure 3">
+            <h3>Chaussure Air Max Plus 3</h3>
+            <p>Prix : 149,99 €</p>
+        </div>
+    </main>
+    <script>
+        function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+
+        document.body.appendChild(snowflake);
+
+        setTimeout(() => {
+            snowflake.remove();
+        }, 10000);
+        }
+
+        setInterval(createSnowflake, 500);
+    </script>
+</body>
+</html>
