@@ -68,10 +68,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -86,6 +87,7 @@ public class SecurityConfiguration {
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")
+                        .failureHandler(authenticationFailureHandler())
                         .permitAll()
                 )
                 .logout((logout) -> logout.permitAll());
@@ -95,29 +97,30 @@ public class SecurityConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService() {
-
-        var userDetails =
-                new InMemoryUserDetailsManager();
         UserDetails user =
                 User.withUsername("user")
-                        .password("password")
-                        .authorities("USER")
+                        .password(passwordEncoder().encode("password"))
+                        .authorities("ROLE_USER")
                         .build();
         UserDetails admin =
-                User.withDefaultPasswordEncoder()
-                        .username("admin")
-                        .password("admin")
-                        .roles("USER", "ADMIN")
+                User.withUsername("admin")
+                        .password(passwordEncoder().encode("admin"))
+                        .authorities("ROLE_USER", "ROLE_ADMIN")
                         .build();
 
-
-        userDetails.createUser(user);
-        System.out.println(userDetails.userExists("user"));
-        return userDetails;
+        return new InMemoryUserDetailsManager(user, admin);
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationFailureHandler authenticationFailureHandler() {
+        return (request, response, exception) -> {
+            request.setAttribute("errorMessage", exception.getMessage());
+            request.getRequestDispatcher("/login").forward(request, response);
+        };
     }
 }

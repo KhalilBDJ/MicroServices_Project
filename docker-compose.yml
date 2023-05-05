@@ -27,6 +27,62 @@ services:
       echo 'CREATE DATABASE produit_db;' | PGPASSWORD=admin psql -h db -U postgres;
       "
 
+  eureka:
+    image: eureka
+    ports:
+      - "8761:8761"
+    depends_on:
+      - db
+
+  config:
+    image: config
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka
+
+  gateway:
+    image: gateway
+    ports:
+      - "8085:8085"
+    depends_on:
+      - config
+      - paiement
+      - client
+      - commande
+      - produit
+
+  paiement:
+    image: paiement
+    ports:
+      - "8081:8081"
+    depends_on:
+      - config
+      - eureka
+
+  client:
+    image: client
+    ports:
+      - "8082:8082"
+    depends_on:
+      - config
+      - eureka
+
+  commande:
+    image: commande
+    ports:
+      - "8083:8083"
+    depends_on:
+      - config
+      - eureka
+
+  produit:
+    image: produit
+    ports:
+      - "8084:8084"
+    depends_on:
+      - config
+      - eureka
+
 volumes:
   db_data:
-
